@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Agregar un nuevo Producto</h2>
+    
+    <div class="message success" *ngIf="status == 'success'">
+        El producto se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El producto no se agrego correctamente
+    </div>
+
+
+
+
+    <form #productoForm="ngForm" (ngSubmit)="onSubmit(productoForm)">
+        <!--<p>
+            <label for="id_producto">ID producto</label>
+            <input type="number" name="id_producto" #name="ngModel" [(ngModel)]="producto.id_producto" required/>
+        </p>
+    -->
+        <p>
+            <label for="nombre_producto">nombre producto</label>
+            <input type="text" name="nombre_producto" #name="ngModel" [(ngModel)]="producto.nombre_producto" required/>
+        </p>
+
+        <p>
+            <label for="precio_unitario">precio unitario</label>
+            <input type="number" name="precio_unitario" #name="ngModel" [(ngModel)]="producto.precio_unitario" required/>
+        </p>
+
+        <input type="submit" value="Enviar"/>
+    </form>
+</div>

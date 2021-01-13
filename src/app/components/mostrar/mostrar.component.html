@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Productos</h2>
+
+<ul class="producto">
+    <li *ngFor="let producto of productos">
+        <a [routerLink]="['/producto',producto.id_producto]">
+            <h3>{{producto.nombre_producto}}</h3>
+            <span>identificador: {{producto.id_producto}}<br/></span>
+            <span>Precio unitario: {{producto.precio_unitario}}</span>
+        </a>
+    </li>
+</ul>
+
+
+</div>
