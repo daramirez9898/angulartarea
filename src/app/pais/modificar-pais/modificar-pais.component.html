@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="dataPaisComponent">
+        <h1>Nombre Del Pais: {{pais?.nombre_pais}}</h1>
+        <p>Identidifador del Pais: {{pais?.id_pais}}</p>
+        
+        <p>
+            <a [routerLink]="['/editarPais',pais.id_pais]"  class="button-edit">Editar</a>
+            <a (click)="deleteProducto(pais.id_pais)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 

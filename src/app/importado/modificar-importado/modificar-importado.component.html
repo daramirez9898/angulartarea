@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="dataImportadoComponent">
+        <h3>Pais importador: {{importado?.pais_id_pais}}</h3>
+        <p>identificador: {{importado?.id_importacion}}<br/></p>
+        <p>Fecha: {{importado?.fecha}}<br/></p>
+        <p>Cantidad: {{importado?.cantidad}}<br/></p>
+        <p>Producto: {{importado?.producto_id_producto}}</p>
+            
+        
+        <p>
+            <a [routerLink]="['/editarImportado',importado.id_importacion]"  class="button-edit">Editar</a>
+            <a (click)="deleteImport(importado.id_importacion)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 

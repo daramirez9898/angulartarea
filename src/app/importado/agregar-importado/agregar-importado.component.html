@@ -1,0 +1,31 @@
+<div class="container" *ngIf="importado">
+    <h2>Agregar una nueva importacion</h2>
+    
+    <div class="message success" *ngIf="status == 'success'">
+        La importacion se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        La importacion no se agrego correctamente
+    </div>
+
+
+
+
+    <form #importadoForm="ngForm" (ngSubmit)="onSubmit(importadoForm)">
+       
+        <p>
+            <label for="producto_id_producto">identificador del producto</label>
+            <input type="text" name="producto_id_producto" #name="ngModel" [(ngModel)]="importado.producto_id_producto" required/>
+        </p>
+        <p>
+            <label for="pais_id_pais">identificador del  Pais</label>
+            <input type="text" name="pais_id_pais" #name="ngModel" [(ngModel)]="importado.pais_id_pais" required/>
+        </p>
+        <p>
+            <label for="cantidad">cantidad de importacion</label>
+            <input type="text" name="cantidad" #name="ngModel" [(ngModel)]="importado.cantidad" required/>
+        </p>
+
+        <input type="submit" value="Enviar"/>
+    </form>
+</div>

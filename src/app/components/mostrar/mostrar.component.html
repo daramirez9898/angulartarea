@@ -1,7 +1,7 @@
 <div class="container">
+   
     <h2>Productos</h2>
-
-<ul class="producto">
+    <ul class="producto">
     <li *ngFor="let producto of productos">
         <a [routerLink]="['/producto',producto.id_producto]">
             <h3>{{producto.nombre_producto}}</h3>

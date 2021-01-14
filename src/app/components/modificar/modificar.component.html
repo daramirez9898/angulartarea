@@ -1,7 +1,13 @@
 <div class="container">
-
-
-<p>nombre del producto: {{productos?.nombre_producto}}</p>
-
-
+    <div class="data">
+        <h1>Nombre Del Producto: {{producto?.nombre_producto}}</h1>
+        <p>Identidifador del Producto: {{producto?.id_producto}}</p>
+        <p>Precio unitario: {{producto?.precio_unitario}}</p>
+        
+        <p>
+            <a [routerLink]="['/editarProducto',producto.id_producto]"  class="button-edit">Editar</a>
+            <a (click)="deleteProducto(producto.id_producto)" class="button-delete">Borrar</a>
+        </p>
+   
+    </div>
 </div>

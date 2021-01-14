@@ -1,0 +1,15 @@
+<div class="container">
+   
+    <h2>Paises</h2>
+    <ul class="pais">
+    <li *ngFor="let pais of paises">
+        <a [routerLink]="['/pais',pais.id_pais]">
+            <h3>{{pais.nombre_pais}}</h3>
+            <span>identificador: {{pais.id_pais}}<br/></span>
+            
+        </a>
+    </li>
+</ul>
+
+
+</div>

@@ -1,0 +1,24 @@
+<div class="container" *ngIf="pais">
+    <h2>Agregar un nuevo Pais</h2>
+    
+    <div class="message success" *ngIf="status == 'success'">
+        El Pais se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El Pais no se agrego correctamente
+    </div>
+
+
+
+
+    <form #paisForm="ngForm" (ngSubmit)="onSubmit(paisForm)">
+       
+        <p>
+            <label for="nombre_pais">nombre Pais</label>
+            <input type="text" name="nombre_pais" #name="ngModel" [(ngModel)]="pais.nombre_pais" required/>
+        </p>
+
+
+        <input type="submit" value="Enviar"/>
+    </form>
+</div>

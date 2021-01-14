@@ -27,7 +27,7 @@ export class AgregarComponent implements OnInit {
     console.log(this.producto);
     this._productoService.saveProducto(this.producto).subscribe(
       response =>{
-        if(response.project){
+        if(response){
           this.status = 'success';
         }else{
           this.status = 'failed';

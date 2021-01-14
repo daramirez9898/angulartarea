@@ -4,26 +4,26 @@ import { ProductoService } from '../../services/producto.service';
 import { Global } from '../../services/global';
 import { ActivatedRoute,Router, Params } from '@angular/router';
 
+
 @Component({
-  selector: 'app-modificar',
-  templateUrl: './modificar.component.html',
-  styleUrls: ['./modificar.component.css'],
+  selector: 'app-editar',
+  templateUrl: '../agregar/agregar.component.html',
+  styleUrls: ['./editar.component.css'],
   providers: [ProductoService]
 })
-export class ModificarComponent implements OnInit {
+export class EditarComponent implements OnInit {
 
-  public url: string;
   public producto: Producto;
+  public status: string;
+  public url: string;
 
   constructor(
     private _productoService: ProductoService,
     private _router: Router,
     private _route: ActivatedRoute
-  ){ 
+  ){
     this.url = Global.url;
-    this.producto = new Producto(0,'',0);
   }
-
   ngOnInit(){
     this._route.params.subscribe(params =>{
       let id = params.id;
@@ -47,18 +47,16 @@ export class ModificarComponent implements OnInit {
     )
   }
 
-  deleteProducto(id){
-    this._productoService.deleteProducto(id).subscribe(
-      response =>{
-        console.log(response);
+  onSubmit(form){
+    this._productoService.updateProducto(this.producto).subscribe(
+      response=>{
         if(response){
           this._router.navigate(['mostrar']);
         }
       },
-      error =>{
+      error=>{
         console.log(<any>error);
       }
-    )
+    );
   }
-
 }

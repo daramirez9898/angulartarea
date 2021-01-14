@@ -29,10 +29,21 @@ export class ProductoService{
         return this._http.get(this.url+'Productos',{headers: headers});
     }
 
-    getProducto(id: number): Observable<any>{
+    getProducto(id): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type','application/json');
         return this._http.get(this.url+'Productos/'+id,{headers: headers});    
     }
 
+    deleteProducto(id): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+        return this._http.delete(this.url+'deleteProducto/'+id,{headers: headers});        
+    }
     
+    updateProducto(producto): Observable<any>{
+        let params = JSON.stringify(producto);
+    
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+        return this._http.put(this.url+'updateProducto/'+producto.id_producto,params,{headers: headers});            
+    }
+
 }

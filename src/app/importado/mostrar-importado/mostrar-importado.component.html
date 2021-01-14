@@ -1,0 +1,19 @@
+<div class="container">
+   
+    <h2>Importaciones</h2>
+    <ul class="importado">
+    <li *ngFor="let importado of importados">
+        <a [routerLink]="['/importado',importado.id_importacion]">
+            <h3>Pais importador: {{importado.pais_id_pais}}</h3>
+            <span>identificador: {{importado.id_importacion}}<br/></span>
+            <span>Producto importado: {{importado.producto_id_producto}}<br/></span>
+            <span>Fecha: {{importado.fecha}}<br/></span>
+            <span>Cantidad: {{importado.cantidad}}<br/></span>
+                                    
+            
+        </a>
+    </li> 
+</ul>
+
+
+</div>

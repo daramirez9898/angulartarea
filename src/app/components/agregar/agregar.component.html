@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="producto">
     <h2>Agregar un nuevo Producto</h2>
     
     <div class="message success" *ngIf="status == 'success'">
@@ -12,11 +12,7 @@
 
 
     <form #productoForm="ngForm" (ngSubmit)="onSubmit(productoForm)">
-        <!--<p>
-            <label for="id_producto">ID producto</label>
-            <input type="number" name="id_producto" #name="ngModel" [(ngModel)]="producto.id_producto" required/>
-        </p>
-    -->
+       
         <p>
             <label for="nombre_producto">nombre producto</label>
             <input type="text" name="nombre_producto" #name="ngModel" [(ngModel)]="producto.nombre_producto" required/>
